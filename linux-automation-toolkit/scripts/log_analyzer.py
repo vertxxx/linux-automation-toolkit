@@ -22,7 +22,7 @@ def analyze_log(log_path: Path) -> int:
     malformed_lines = 0
     total_lines = 0
 
-    with log_path.open("r", encoding="utf-8", errors="replace") as log_file:
+    with log_path.open("r", encoding="utf-8-sig", errors="replace") as log_file:
         for line in log_file:
             total_lines += 1
             match = LOG_PATTERN.search(line)
